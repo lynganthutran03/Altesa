@@ -10,18 +10,6 @@ body {
     font-family: 'Inter Tight', sans-serif;
 }
 
-/* Headings and specific sections using Cormorant Garamond */
-h1,
-h2,
-h3,
-h4,
-.logo,
-.welcome-stats span,
-.villa-card p:nth-child(4),
-.blog-post p {
-    font-family: 'Cormorant Garamond', serif;
-}
-
 /* Header */
 header {
     display: flex;
@@ -78,6 +66,7 @@ nav ul li a:hover {
 /* Dropdown Menu */
 .dropdown {
     position: relative;
+    display: inline-block;
 }
 
 .dropdown-toggle {
@@ -146,12 +135,13 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
     padding: 0 20px;
     overflow: hidden;
 }
 
 .hero-slider {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(rgba(14, 24, 36, 0.28) 0%, rgb(14, 24, 36) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -180,7 +170,6 @@ nav ul li a:hover {
     animation: kenBurnsCenter 16s infinite;
     animation-delay: 8s;
     z-index: 0;
-    /* Start behind the first slide */
 }
 
 @keyframes kenBurnsCenter {
@@ -191,19 +180,16 @@ nav ul li a:hover {
 
     40% {
         transform: scale(1.2);
-        /* Zoom in from the center */
         z-index: 1;
     }
 
     50% {
         transform: scale(1.2);
         z-index: 0;
-        /* Move behind the next slide */
     }
 
     51% {
         transform: scale(1);
-        /* Reset for next cycle */
         z-index: 0;
     }
 
@@ -218,50 +204,92 @@ nav ul li a:hover {
     z-index: 2;
 }
 
-.hero-content h1 {
-    font-size: 72px;
+.hero-content .heading {
+    color: rgb(255, 255, 255);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 50px;
     margin-bottom: 15px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
-    text-transform: uppercase;
+}
+
+.hero-content .styling-vacation {
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(255, 200, 154);
+    margin-bottom: 15px;
+    line-height: 71.5px;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: -1px;
 }
 
 .hero-content p {
-    font-size: 20px;
-    margin-bottom: 40px;
+    color: rgb(229, 229, 229);
+    font-size: 22px;
     font-weight: 400;
     font-family: 'Inter Tight', sans-serif;
+    text-align: center;
+    text-transform: none;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 40px;
 }
 
 .search-bar {
     display: flex;
-    gap: 15px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(71, 71, 71, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.search-bar input,
-.search-bar select {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 50px;
-    font-family: 'Inter Tight', sans-serif;
+.search-bar input {
+    background: rgba(71, 71, 71, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.2);
     color: #fff;
+    margin-right: 10px;
 }
 
-.search-bar input::placeholder,
-.search-bar select {
-    color: #ccc;
+.search-bar input::placeholder {
+    color: #ddd;
 }
 
-.search-bar select {
+.search-bar .select-villa {
     appearance: none;
-    background: rgba(255, 255, 255, 0.2) url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA1NiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIgNkw4IDEyTDE0IDYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K') no-repeat right 10px center;
-    background-size: 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #4A5E6A;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    margin-right: 10px;
+    position: relative;
+}
+
+.search-bar .select-villa:hover {
+    background-color: #3e4f59;
+}
+
+.search-bar .select-villa option {
+    background-color: white;
+    color: black;
+    font-family: 'Inter Tight', sans-serif;
 }
 
 .search-bar button {
@@ -293,10 +321,17 @@ nav ul li a:hover {
     flex: 1;
 }
 
-.welcome-text h2 {
-    font-size: 48px;
+.welcome-text .styling-altesa {
+    color: rgb(14, 24, 36);
+    font-family: "Cormorant Infant", sans-serif;
+    font-style: italic;
+    font-size: 52px;
+}
+
+.welcome-text h1 {
+    font-size: 45px;
     margin-bottom: 20px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.2;
 }
 
@@ -783,7 +818,8 @@ footer {
 }
 
 .footer-section p {
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 400;
     color: #ccc;
 }
 
