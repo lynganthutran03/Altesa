@@ -323,7 +323,7 @@ nav ul li a:hover {
 
 .welcome-text .styling-altesa {
     color: rgb(14, 24, 36);
-    font-family: "Cormorant Infant", sans-serif;
+    font-family: 'Cormorant Infant', sans-serif;
     font-style: italic;
     font-size: 52px;
 }
@@ -427,11 +427,25 @@ nav ul li a:hover {
     background: #fff;
 }
 
+.villas h1 {
+    font-style: 'Inter Tight', sans-serif;
+    font-size: 40px;
+    font-weight: 450;
+    color: rgb(14, 24, 36);
+    text-transform: capitalize;
+}
+
 .villas h2 {
-    font-size: 48px;
-    margin-bottom: 50px;
-    font-weight: 700;
-    color: #2b2b2b;
+    color: rgb(14, 24, 36);
+    font-style: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.villas .heading-style {
+    font-family: 'Cormorant Infant', sans-serif;
+    font-size: 45px;
+    font-style: italic;
 }
 
 .villa-cards {
@@ -522,10 +536,27 @@ nav ul li a:hover {
 }
 
 .reasons-text h2 {
-    font-size: 48px;
-    margin-bottom: 30px;
-    font-weight: 700;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    font-weight: 450;
     color: #2b2b2b;
+}
+
+.reasons-text h1 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 40px;
+    font-weight: 450;
+    color: rgb(14, 24, 36);
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.reasons-text .text-style {
+    font-family: 'Cormorant Infant', sans-serif;
+    font-style: italic;
+    font-size: 48px;
+    font-size: 500;
+    color: rgb(14, 24, 36);
 }
 
 .reasons-text ul {
