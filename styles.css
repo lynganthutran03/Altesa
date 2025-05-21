@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,6 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
+    margin-top: 20px;
     background: transparent;
     position: absolute;
     top: 0;
@@ -29,7 +31,8 @@ header {
 }
 
 .logo img {
-    width: 120px;
+    max-width: 200px;
+    width: 150px;
     height: auto;
 }
 
@@ -128,11 +131,12 @@ nav ul li a:hover {
 
 /* Hero Section with Slider */
 .hero {
+    border: 20px solid white;
     position: relative;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
     padding: 0 20px;
@@ -140,7 +144,6 @@ nav ul li a:hover {
 }
 
 .hero-slider {
-    background-color: rgba(0, 0, 0, 0);
     background-image: linear-gradient(rgba(14, 24, 36, 0.28) 0%, rgb(14, 24, 36) 100%);
     position: absolute;
     top: 0;
@@ -148,6 +151,18 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+    z-index: 2;
+    pointer-events: none;
 }
 
 .slide {
@@ -158,7 +173,6 @@ nav ul li a:hover {
     height: 100%;
     background-size: cover;
     background-position: center;
-    transform: scale(1);
     z-index: 1;
 }
 
@@ -201,7 +215,8 @@ nav ul li a:hover {
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    margin-bottom: 60px;
 }
 
 .hero-content .heading {
@@ -241,57 +256,125 @@ nav ul li a:hover {
 .search-bar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 12px;
     background: rgba(71, 71, 71, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 30px;
-    padding: 15px 20px;
+    padding: 10px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.search-bar input {
+.search-bar input,
+.search-bar select,
+.search-bar button {
     background: rgba(71, 71, 71, 0.1);
-    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px 12px;
+    border-radius: 20px;
+    padding: 10px 12px;
     font-size: 14px;
+    text-align: center;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
     color: #fff;
-    margin-right: 10px;
+    font-family: 'Inter Tight', sans-serif;
 }
 
-.search-bar input::placeholder {
-    color: #ddd;
+.search-bar input[type="number"] {
+    color: #fff;
+    cursor: pointer;
 }
 
+.search-bar input[type="number"]::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+.search-bar input[type="number"],
+.search-bar input[type="date"],
+.search-bar select {
+    width: 180px;
+}
+
+.search-bar input[type="date"] {
+    top: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.search-bar input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+}
+
+.search-bar input[type="date"]::-webkit-datetime-edit,
+.search-bar input[type="date"]::-webkit-inner-spin-button,
+.search-bar input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+.search-bar input[type="date"]::after {
+    content: attr(data-placeholder);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #dfdfdf;
+    pointer-events: none;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+}
+
+.search-bar input[type="date"]:valid {
+    color: #fff;
+}
+
+.search-bar input[type="date"]:valid::after {
+    opacity: 0;
+}
+
+.search-bar input[type="date"]:focus::after {
+    opacity: 1;
+}
+
+.search-bar input[type="date"]:focus:valid::after {
+    opacity: 0;
+}
+
+/* Select villa styles */
 .search-bar .select-villa {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: #4A5E6A;
-    color: white;
-    padding: 8px 12px;
-    font-size: 14px;
-    border: none;
-    border-radius: 20px;
-    width: 150px;
+    background: rgba(71, 71, 71, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
     cursor: pointer;
     font-family: 'Inter Tight', sans-serif;
     font-weight: 500;
-    margin-right: 10px;
-    position: relative;
-}
-
-.search-bar .select-villa:hover {
-    background-color: #3e4f59;
+    width: 180px;
 }
 
 .search-bar .select-villa option {
     background-color: white;
     color: black;
-    font-family: 'Inter Tight', sans-serif;
 }
 
+.search-bar .select-villa option:checked {
+    color: #fff;
+}
+
+/* Button styles */
 .search-bar button {
     padding: 10px 20px;
     background: #f5c7a1;
@@ -306,6 +389,32 @@ nav ul li a:hover {
 
 .search-bar button:hover {
     background: #e0b08a;
+}
+
+.date-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.date-placeholder {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #888;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.date-input-wrapper input:valid + .date-placeholder,
+.date-input-wrapper input:focus:valid + .date-placeholder {
+    opacity: 0;
+}
+
+.date-input-wrapper input:focus + .date-placeholder {
+    opacity: 1;
 }
 
 /* Welcome Section */

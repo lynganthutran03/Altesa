@@ -65,11 +65,15 @@
                 </h1>
                 <p>Escape to Paradise in Our Luxurious Villas & Resorts</p>
                 <div class="search-bar">
-                    <input type="text" placeholder="Check In">
-                    <input type="text" placeholder="Check Out">
-                    <input type="text" placeholder="Number of Guests">
-                    <select class="select-villa">
-                        <option value="" disabled selected>Select Villa</option>
+                    <div class="date-input-wrapper">
+                        <input type="date" id="checkin" name="checkin" data-placeholder="Check In" required>
+                    </div>
+                    <div class="date-input-wrapper">
+                        <input type="date" id="checkout" name="checkout" data-placeholder="Check Out" required>
+                    </div>
+                    <input type="number" placeholder="Number of Guests" min="0" max="100" required>
+                    <select class="select-villa" required>
+                        <option value="" disabled selected hidden>Select Villa</option>
                         <option value="whispering-pines">Whispering Pines Villa</option>
                         <option value="mountain-serenity">Mountain Serenity Villa</option>
                         <option value="modern-bliss">Modern Bliss Villa</option>
