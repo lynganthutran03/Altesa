@@ -167,50 +167,18 @@ nav ul li a:hover {
 
 .slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
     z-index: 1;
 }
 
-.slide:nth-child(1) {
-    animation: kenBurnsCenter 16s infinite;
-}
-
-.slide:nth-child(2) {
-    animation: kenBurnsCenter 16s infinite;
-    animation-delay: 8s;
-    z-index: 0;
-}
-
-@keyframes kenBurnsCenter {
-    0% {
-        transform: scale(1);
-        z-index: 1;
-    }
-
-    40% {
-        transform: scale(1.2);
-        z-index: 1;
-    }
-
-    50% {
-        transform: scale(1.2);
-        z-index: 0;
-    }
-
-    51% {
-        transform: scale(1);
-        z-index: 0;
-    }
-
-    100% {
-        transform: scale(1);
-        z-index: 0;
-    }
+.slide.active {
+    opacity: 1;
+    z-index: 2;
 }
 
 .hero-content {
@@ -759,9 +727,8 @@ nav ul li a:hover {
 
 .slider-track {
     display: flex;
-    width: calc(300px * 6);
-    /* 4 cards + 2 duplicates for infinite loop */
-    animation: slide 20s infinite linear;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
 .testimonial-card {
@@ -802,18 +769,6 @@ nav ul li a:hover {
     color: #d4a373;
     font-family: 'Inter Tight', sans-serif;
     font-weight: 500;
-}
-
-/* Slider Animation */
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-300px * 3));
-        /* Move by 3 cards */
-    }
 }
 
 .slider-dots {
