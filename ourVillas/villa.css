@@ -597,7 +597,7 @@ nav ul li a:hover, .active {
     margin-bottom: 40px;
 }
 
-.heading-style {
+.villas .heading-style {
     color: #000000;
     font-family: 'Cormorant Garamond', sans-serif;
     font-style: italic;
@@ -728,11 +728,11 @@ nav ul li a:hover, .active {
     position: relative;
     height: 80vh;
     min-height: 500px;
-    background-image: url('./images/Our\ villas\ -\ 2.jpg');
+    background-image: url('../images/Our\ villas\ -\ 2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    border: 20px solid white;
+    border-top: 15px solid white;
     overflow: hidden;
 }
 

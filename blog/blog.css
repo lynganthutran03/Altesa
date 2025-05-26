@@ -597,7 +597,7 @@ nav ul li a:hover, .active {
     margin-bottom: 40px;
 }
 
-.heading-style {
+.villas .heading-style {
     color: #000000;
     font-family: 'Cormorant Garamond', sans-serif;
     font-style: italic;
@@ -732,7 +732,7 @@ nav ul li a:hover, .active {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    border: 20px solid white;
+    border-top: 15px solid white;
     overflow: hidden;
 }
 

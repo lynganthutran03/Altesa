@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Inter+Tight:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
         integrity="sha512-KyZXEAg3QhqLMpG8r+...==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Blog - Altesa Villas & Resorts</title>
+    <title>Pricing Package - Altesa Villas & Resorts</title>
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="./images/Logo-White.png" alt="Altesa Logo">
+            <img src="../images/Logo-White.png" alt="Altesa Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="../index.html" class="active">Home</a></li>
+                <li><a href="../about/about.html">About</a></li>
                 <li class="dropdown">
                     <a href="#">Our Villas <i class="fa-solid fa-angle-down dropdown-icon"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="ourVillas.html">Our Villas</a></li>
-                        <li><a href="villaDetails.html">Villa Details</a></li>
+                        <li><a href="../ourVillas/ourVillas.html">Our Villas</a></li>
+                        <li><a href="../ourVillas/villaDetails.html">Villa Details</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -45,11 +45,11 @@
                 <li class="dropdown">
                     <a href="#">Blog <i class="fa-solid fa-angle-down dropdown-icon"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="singleBlog.html">Single Blog</a></li>
+                        <li><a href="../blog/blog.html">Blog</a></li>
+                        <li><a href="../blog/singleBlog.html">Single Blog</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
             </ul>
         </nav>
         <a href="#">
@@ -61,71 +61,102 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-slider">
-                <div class="slide" style="background-image: url('./images/Slider-1.jpg');"></div>
+                <div class="slide" style="background-image: url('../images/Slider-1.jpg');"></div>
             </div>
             <div class="hero-content">
                 <h1 class="heading">
-                    Our <span class="styling-vacation">Blog</span>
+                    Pricing <span class="styling-vacation">Package</span>
                 </h1>
-                <p>Home > Blog</p>
+                <p>Home > Pricing Package</p>
             </div>
         </section>
 
-        <!-- Blog Section -->
-        <section class="blog">
-            <div class="container">
-                <div class="blog-header">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2>Blog & News</h2>
-                            <h1>Out latest <span class="blog-styling">Blog</span> & news</h1>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="view-btn-container">
-                                <a href="#" class="btn-link"><button type="button" class="view-btn">View All</button></a>
+        <!-- Testimonials Section with Slider -->
+        <section class="testimonials">
+            <div class="testimonials-header">
+                <h2>Testimonials</h2>
+                <h1>What Guests <span class="testimonials-styling">Saying?</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="slider-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-info">
+                            <img src="../images/Customer 2.jpg" alt="Alice Maxwell">
+                            <div class="info-text">
+                                <h4>Alice Maxwell</h4>
+                                <p>Our Customer</p>
                             </div>
                         </div>
+                        <div class="testimonial-text">
+                            <p>"My partner and I chose this villa for our honeymoon, and it was absolutely perfect.
+                                The private terrace with a hot tub and the stunning views of the sunset made for
+                                unforgettable evenings. The attention to detail in the villa's decor."</p>
+                        </div>
                     </div>
-                </div>
-                <div class="blog-posts">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <a href="#">
-                                <div class="blog-post">
-                                    <img src="./images/Blog 1.jpg" alt="Blog Post 1">
-                                    <div class="post-content">
-                                        <h3>10 Ways Villas Can Make Your Holiday Enjoyable</h3>
-                                        <p><i class="fa-solid fa-clock clock-icon"></i>Dec 20, 2024</p>
-                                    </div>
-                                </div>
-                            </a>
+                    <div class="testimonial-card">
+                        <div class="testimonial-info">
+                            <img src="../images/Customer 3.jpg" alt="Archer Corbyn">
+                            <div class="info-text">
+                                <h4>Archer Corbyn</h4>
+                                <p>Our Customer</p>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <a href="#">
-                                <div class="blog-post">
-                                    <img src="./images/Blog 2.jpg" alt="Blog Post 2">
-                                    <div class="post-content">
-                                        <h3>Top 8 Destinations & Villas You Must Visit in 2024</h3>
-                                        <p><i class="fa-solid fa-clock clock-icon"></i>Jun 10, 2024</p>
-                                    </div>
-                                </div>
-                            </a>
+                        <div class="testimonial-text">
+                            <p>"This villa provided a luxurious yet welcoming atmosphere that made our vacation
+                                truly special. The gourmet kitchen allowed us to enjoy some home-cooked meals, while
+                                the on-site restaurant served delicious local cuisine."</p>
                         </div>
-                        <div class="col-md-4">
-                            <a href="#">
-                                <div class="blog-post">
-                                    <img src="./images/Blog 3.jpg" alt="Blog Post 3">
-                                    <div class="post-content">
-                                        <h3>Plan Your Days & Weeks Allocate Time For Family</h3>
-                                        <p><i class="fa-solid fa-clock clock-icon"></i>Mar 15, 2024</p>
-                                    </div>
-                                </div>
-                            </a>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-info">
+                            <img src="../images/Customer 4.jpg" alt="Chelsea West">
+                            <div class="info-text">
+                                <h4>Chelsea West</h4>
+                                <p>Our Customer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"The service at this villa was exceptional from start to finish. Every request was
+                                met with a smile and prompt action. The villa itself was beautifully designed with
+                                modern amenities and stunning views from every window."</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-info">
+                            <img src="../images/Customer 5.jpg" alt="Waldo Buckley">
+                            <div class="info-text">
+                                <h4>Waldo Buckley</h4>
+                                <p>Our Customer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"From the moment we arrived, we were blown away by the villa's beauty and
+                                tranquility. The private pool and stunning views provided the perfect backdrop for a
+                                relaxing getaway. We left feeling rejuvenated and eager to return."</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-info">
+                            <img src="../images/Customer 1.jpg" alt="Dale Mendoza">
+                            <div class="info-text">
+                                <h4>Dale Mendoza</h4>
+                                <p>Our Customer</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"Our family vacation at this villa exceeded all our expectations. The spacious rooms
+                                and well-equipped kitchen made us feel right at home. The kids loved the dedicated play
+                                area and the beach access, while we enjoyed the spa services."</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="slider-nav">
+                <button type="button" class="nav-btn prev-btn"><i class="fa-solid fa-angle-left"></i></button>
+                <button type="button" class="nav-btn next-btn"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 
     <!-- Go to Top Button -->
@@ -142,7 +173,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="footer-brandname">
-                                <img src="./images/Logo-White.png" alt="Altesa Logo" width="241px" height="77px">
+                                <img src="../images/Logo-White.png" alt="Altesa Logo" width="241px" height="77px">
                                 <p>Welcome to Villa Paradise, where luxury meets tranquility in the most breathtaking
                                     locations around the world.</p>
                                 <input type="email" id="subscribeEmail" class="form-control mb-2"
@@ -163,10 +194,10 @@
                                 <h3>Quick Menu</h3>
                                 <ul>
                                     <li><a href="#">Home</a></li>
-                                    <li><a href="./about/about.html">About</a></li>
-                                    <li><a href="./our_villa/villaDetails.html">Our Villas</a></li>
-                                    <li><a href="./blog/blog.html">Blog</a></li>
-                                    <li><a href="./contact/contact.html">Contact</a></li>
+                                    <li><a href="../about/about.html">About</a></li>
+                                    <li><a href="../ourVillas/villaDetails.html">Our Villas</a></li>
+                                    <li><a href="../blog/blog.html">Blog</a></li>
+                                    <li><a href="../contact/contact.html">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -219,7 +250,7 @@
         <p class="footer-bottom">Copyright © 2024 Altesa. All rights reserved.
         </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 
 </html>

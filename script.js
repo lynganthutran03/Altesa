@@ -150,8 +150,8 @@ function countUpStats() {
 
     const formatNumber = (value, type) => {
         if (type === 'resorts') return value.toString(); // No "+" or "K+"
-        if (value >= 1000) return (value / 1000).toFixed(0) + 'K+';
-        return value + '+';
+        if (value >= 1000) return (value / 1000).toFixed(0) + ' K+';
+        return value + ' +';
     };
 
     const animate = (counter, target, type) => {
