@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleSubscribe();
     const { modal, modalImg, closeBtn } = createModal();
     setupEventListeners(modal, modalImg, closeBtn);
+    initFAQAccordion();
 });
 
 // Hero Slider with Video Support
@@ -349,20 +350,20 @@ function handleSubscribe() {
 function createModal() {
     const modal = document.createElement('div');
     modal.className = 'gallery-modal';
-    
+
     const modalImg = document.createElement('img');
     modalImg.className = 'modal-image';
-    
+
     const closeBtn = document.createElement('span');
     closeBtn.className = 'modal-close';
     closeBtn.innerHTML = '&times;';
-    
+
     modal.appendChild(modalImg);
     modal.appendChild(closeBtn);
     document.body.appendChild(modal);
-    
+
     addModalStyles();
-    
+
     return { modal, modalImg, closeBtn };
 }
 
@@ -417,12 +418,12 @@ function setupEventListeners(modal, modalImg, closeBtn) {
     document.querySelectorAll('.view-btn').forEach(button => {
         button.addEventListener('click', () => handleViewButtonClick(button, modal, modalImg));
     });
-    
+
     closeBtn.addEventListener('click', () => closeModal(modal));
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal(modal);
     });
-    
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal(modal);
     });
@@ -430,15 +431,15 @@ function setupEventListeners(modal, modalImg, closeBtn) {
 
 function handleViewButtonClick(button, modal, modalImg) {
     const imgSrc = button.closest('.img-container').querySelector('img').src;
-    
+
     modalImg.src = imgSrc;
-    
+
     modalImg.style.transform = 'scale(0.9)';
     setTimeout(() => {
         openModal(modal);
         modalImg.style.transform = 'scale(1)';
     }, 100);
-    
+
     button.classList.add('clicked');
     setTimeout(() => {
         button.classList.remove('clicked');
@@ -460,16 +461,40 @@ function openModal(modal) {
 function closeModal(modal) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    
+
     document.querySelectorAll('.view-btn').forEach(btn => {
         btn.classList.remove('clicked');
     });
-    
+
     setTimeout(() => {
         if (!modal.classList.contains('active')) {
             modal.style.display = 'none';
         }
     }, 300);
+}
+
+// FAQ Section
+function initFAQAccordion() {
+    const columns = document.querySelectorAll('.col-md-6');
+
+    columns.forEach(column => {
+        const faqItems = column.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const button = item.querySelector('.faq-question');
+
+            button.addEventListener('click', () => {
+                if (item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    return;
+                }
+
+                faqItems.forEach(i => i.classList.remove('active'));
+
+                item.classList.add('active');
+            });
+        });
+    });
 }
 
 // Utility function

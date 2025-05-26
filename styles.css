@@ -828,7 +828,7 @@ nav ul li a:hover, .active {
 .reasons {
     display: flex;
     align-items: stretch;
-    margin: 50px 130px;
+    margin: 50px 100px;
     padding: 100px 0;
     gap: 40px;
 }
@@ -836,6 +836,7 @@ nav ul li a:hover, .active {
 .reasons-images,
 .reasons-content {
     flex: 1;
+    
 }
 
 .reasons-images {
@@ -849,8 +850,8 @@ nav ul li a:hover, .active {
 }
 
 .top-image {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    max-height: 780px;
     display: block;
 }
 
@@ -877,7 +878,7 @@ nav ul li a:hover, .active {
 
 .reasons-content h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 500;
     color: rgb(14, 24, 36);
     text-align: left;
@@ -979,16 +980,16 @@ nav ul li a:hover, .active {
 .amenity {
     background: #fff;
     border: 1px solid #ddd;
-    padding: 10px 25px;
+    padding: 15px 25px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    gap: 50px;
-    height: 200px;
-    width: 330px;
+    gap: 45px;
+    max-height: 240px;
+    max-width: 350px;
     transition: all 0.3s ease;
-    margin: 15px;
+    margin: 15px 20px 0;
 }
 
 .amenity.active,
@@ -999,8 +1000,8 @@ nav ul li a:hover, .active {
 
 .icon-circle {
     background: #f3ebe5;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1019,14 +1020,14 @@ nav ul li a:hover, .active {
 }
 
 .icon-circle i {
-    font-size: 30px;
+    font-size: 26px;
     color: #2b2b2b;
     transition: color 0.3s ease;
 }
 
 .amenity p {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 23px;
+    font-size: 17px;
     font-weight: 500;
     color: #2b2b2b;
     margin: 0;
