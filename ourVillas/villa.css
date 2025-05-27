@@ -321,7 +321,7 @@ nav ul li a:hover, .active {
 }
 
 /* Select villa styles */
-.search-bar .select-villa {
+.select-villa {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -331,9 +331,8 @@ nav ul li a:hover, .active {
     cursor: pointer;
     font-family: 'Inter Tight', sans-serif;
     font-size: 15px;
-    font-weight: 500;
     line-height: 1.5;
-    padding: 8px 40px;
+    padding: 10px 40px;
     width: 180px;
     height: 40px;
     position: relative;
@@ -388,6 +387,65 @@ nav ul li a:hover, .active {
 
 .date-input-wrapper input:focus+.date-placeholder {
     opacity: 1;
+}
+
+/* Header Background Section for Viila Details */
+.header-background {
+    border: 20px solid white;
+    position: relative;
+    height: 555px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.header-background-content {
+    position: relative;
+    z-index: 3;
+    margin-bottom: 30px;
+}
+
+.header-background-heading {
+    color: rgb(255, 255, 255);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 50px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.header-background-styling {
+    font-family: 'Cormorant Garamond', sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(255, 200, 154);
+    margin-bottom: 15px;
+    line-height: 71.5px;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.header-background-content p {
+    color: rgb(229, 229, 229);
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Inter Tight', sans-serif;
+    text-align: center;
+    text-transform: none;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 40px;
+}
+
+.header-background-icon {
+    font-size: 15px;
+    padding: 0 8px;
 }
 
 /* About Section */

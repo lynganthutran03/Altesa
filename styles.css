@@ -321,7 +321,7 @@ nav ul li a:hover, .active {
 }
 
 /* Select villa styles */
-.search-bar .select-villa {
+.select-villa {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -331,9 +331,8 @@ nav ul li a:hover, .active {
     cursor: pointer;
     font-family: 'Inter Tight', sans-serif;
     font-size: 15px;
-    font-weight: 500;
     line-height: 1.5;
-    padding: 8px 40px;
+    padding: 10px 40px;
     width: 180px;
     height: 40px;
     position: relative;
