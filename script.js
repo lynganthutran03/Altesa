@@ -4,11 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     videoPlayer();
     countUpStats();
     new ScrollDarken();
-    testimonialSlider();
     handleSubscribe();
     const { modal, modalImg, closeBtn } = createModal();
     setupEventListeners(modal, modalImg, closeBtn);
     initFAQAccordion();
+    initMobileMenu();
 });
 
 // Hero Slider with Video Support
@@ -493,6 +493,74 @@ function initFAQAccordion() {
 
                 item.classList.add('active');
             });
+        });
+    });
+}
+
+// Initializes the mobile menu functionality
+function initMobileMenu() {
+    const header = document.querySelector("header");
+    const nav = document.querySelector("nav");
+
+    const hamburger = createHamburgerIcon();
+    const mobileNav = createMobileNav(nav);
+
+    header.appendChild(hamburger);
+    document.body.appendChild(mobileNav);
+
+    addMenuToggleEvents(hamburger, mobileNav);
+    enableDropdownToggles(mobileNav);
+}
+
+function createHamburgerIcon() {
+    const button = document.createElement("button");
+    button.className = "menu-toggle";
+    button.innerHTML = '<i class="fas fa-bars"></i>';
+    return button;
+}
+
+function createMobileNav(originalNav) {
+    const mobileNav = document.createElement("div");
+    mobileNav.className = "mobile-nav";
+    mobileNav.style.position = "fixed";
+    mobileNav.style.left = "-100%";
+    mobileNav.style.transition = "left 0.3s ease-in-out";
+
+    const logo = document.querySelector(".logo").cloneNode(true);
+    logo.classList.add("mobile-logo");
+    mobileNav.appendChild(logo);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "close-menu";
+    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    mobileNav.appendChild(closeBtn);
+
+    const navClone = originalNav.querySelector("ul").cloneNode(true);
+    navClone.classList.add("mobile-nav-list");
+    mobileNav.appendChild(navClone);
+
+    closeBtn.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        document.body.classList.remove("menu-open");
+    });
+
+    return mobileNav;
+}
+
+function addMenuToggleEvents(hamburger, mobileNav) {
+    hamburger.addEventListener("click", () => {
+        mobileNav.classList.add("open");
+        document.body.classList.add("menu-open");
+    });
+}
+
+function enableDropdownToggles(mobileNav) {
+    const dropdownLinks = mobileNav.querySelectorAll(".dropdown > a");
+
+    dropdownLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            this.parentElement.classList.toggle("open");
         });
     });
 }

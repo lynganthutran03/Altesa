@@ -10,7 +10,132 @@ body {
     font-family: 'Inter Tight', sans-serif;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
 /* Header */
+.mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    /* White background as in original */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    z-index: 1001;
+    padding: 30px 20px;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 1 !important;
+}
+
+.mobile-nav .mobile-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mobile-nav .mobile-logo img {
+    width: 120px;
+}
+
+.mobile-nav .close-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.mobile-nav .mobile-nav-list {
+    list-style: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    border: 1px solid #eee;
+}
+
+.mobile-nav .mobile-nav-list li {
+    margin-bottom: 10px;
+}
+
+.mobile-nav .mobile-nav-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-nav .mobile-nav-list li a:hover,
+.mobile-nav .mobile-nav-list li a.active {
+    color: #000;
+    background-color: #f5c7a1;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/* Dropdown styles for mobile */
+.mobile-nav .dropdown-menu {
+    max-height: 0;
+    padding-left: 20px;
+    display: none;
+    background: #fff;
+    border-radius: 5px;
+    list-style: none;
+    margin-top: 5px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-nav .dropdown.open .dropdown-menu {
+    max-height: 500px;
+    display: block;
+}
+
+.mobile-nav .dropdown>a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav .dropdown>a.active {
+    background-color: #f5c7a1;
+    color: #000;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.mobile-nav .dropdown-menu li a {
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.2s;
+}
+
+.mobile-nav .dropdown-menu li a:hover {
+    background: #f5c7a1;
+    color: #000;
+}
+
 header {
     font-family: 'Inter Tight', sans-serif;
     display: flex;
@@ -23,7 +148,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1002;
 }
 
 .logo {
@@ -61,7 +186,8 @@ nav ul li a {
     display: inline-flex;
 }
 
-nav ul li a:hover, .active {
+nav ul li a:hover,
+.active {
     color: #fff;
     background-color: rgba(255, 255, 255, 0.21);
 }
@@ -727,7 +853,7 @@ nav ul li a:hover, .active {
     position: relative;
     height: 80vh;
     min-height: 500px;
-    background-image: url('./images/Our\ villas\ -\ 2.jpg');
+    background-image: url('./images/Our villas - 2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -835,7 +961,6 @@ nav ul li a:hover, .active {
 .reasons-images,
 .reasons-content {
     flex: 1;
-    
 }
 
 .reasons-images {
@@ -937,7 +1062,6 @@ nav ul li a:hover, .active {
 .benefit-text {
     flex: 1;
 }
-
 
 .benefit-desc {
     font-family: 'Inter Tight', sans-serif;
@@ -1529,7 +1653,10 @@ footer {
     font-size: 14px;
 }
 
-.quick-menu, .support, .contact-info, .social-links {
+.quick-menu,
+.support,
+.contact-info,
+.social-links {
     flex: 1;
 }
 
@@ -1645,7 +1772,7 @@ footer {
 }
 
 #subscribeAlert .btn-close {
-    font-size: 15px; /* Reduced size of the "X" icon */
+    font-size: 15px;
     padding: 0;
     position: absolute;
     top: 10px;
@@ -1668,72 +1795,320 @@ footer {
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
-    .about-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .about-media {
-        order: -1;
-    }
-
-    .reasons {
-        flex-direction: column;
-        padding: 60px 5%;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr;
-        margin-bottom: 40px;
-    }
-
-    .reasons-content {
-        max-width: 100%;
-    }
-
-    .reasons-content h1 {
-        font-size: 36px;
-    }
-}
-
 @media (max-width: 768px) {
+    body.menu-open header .logo {
+        display: none !important;
+    }
+
+    .mobile-nav {
+        visibility: visible !important;
+    }
+
+    .mobile-nav.open {
+        left: 0 !important;
+    }
+
+    /* Header */
+    header {
+        padding: 15px 20px;
+        margin-top: 10px;
+        z-index: 1003 !important;
+    }
+
+    .logo img {
+        width: 120px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .reserve-btn {
+        display: none;
+    }
+
+    header .menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1004;
+    }
+
+    .mobile-logo img {
+        content: url('./images/Logo-Dark.png');
+        width: 150px;
+        height: auto;
+    }
+
+    .mobile-nav .mobile-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mobile-nav ul li {
+        margin-bottom: 15px;
+    }
+
+    .mobile-nav ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .mobile-nav .dropdown-menu {
+        padding-left: 20px;
+        display: none;
+    }
+
+    .mobile-nav .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .mobile-nav .dropdown>a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 80vh;
+        border-width: 10px;
+    }
+
+    .hero-content .heading {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content .styling-vacation {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .search-bar input,
+    .search-bar select,
+    .search-bar .date-input-wrapper,
+    .search-bar button {
+        width: 100%;
+    }
+
+    /* About Section */
     .about-section {
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
 
     .section-title {
-        font-size: 36px;
+        font-size: 24px;
+    }
+
+    .about-styling {
+        font-size: 28px;
     }
 
     .about-stats {
         grid-template-columns: 1fr;
-    }
-
-    .about-media {
-        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .about-image img {
-        height: auto;
+        height: 300px;
+    }
+
+    /* Villas Section */
+    .villas {
+        padding: 40px 20px;
+    }
+
+    .villas h1 {
+        font-size: 28px;
+    }
+
+    .villa-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Background Banner */
+    .background-banner {
+        height: 50vh;
+        border-width: 10px;
     }
 
     .background-content h2 {
-        font-size: 2rem;
+        font-size: 24px;
+        max-width: 100%;
+    }
+
+    .background-styling {
+        font-size: 28px;
     }
 
     .background-button {
-        padding: 12px 30px;
+        width: 80px;
+        height: 80px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Reasons Section */
+    .reasons {
+        margin: 30px 20px;
+        padding: 40px 0;
+        flex-direction: column;
+    }
+
+    .reasons-images {
+        margin-bottom: 30px;
+    }
+
+    .top-image {
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .bottom-image {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        margin-top: 20px;
+    }
+
+    .reasons-content {
+        padding: 0;
+    }
+
+    .reasons-content h1 {
+        font-size: 28px;
+    }
+
+    /* Amenities Section */
+    .amenities {
+        margin: 0;
+        padding: 40px 20px;
+    }
+
+    .amenities h2 {
+        font-size: 24px;
+        padding-left: 0;
+    }
+
+    .amenity {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Gallery Section */
+    .gallery {
+        padding: 40px 20px;
+    }
+
+    .gallery-content h1 {
+        font-size: 28px;
+    }
+
+    .img-container {
+        margin: 10px 0;
+    }
+
+    .img-container img {
+        height: 300px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: 40px 20px;
+        border-width: 10px;
+    }
+
+    .testimonials-header h1 {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        min-width: 100%;
+    }
+
+    /* Blog Section */
+    .blog {
+        padding: 40px 20px;
+        margin: 50px auto;
+    }
+
+    .blog-header h1 {
+        font-size: 28px;
+    }
+
+    .blog-post {
+        height: 350px;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        margin: 40px auto;
+        gap: 30px;
+    }
+
+    .footer-content .row {
+        flex-direction: column;
+    }
+
+    .footer-brandname {
+        max-width: 100%;
+    }
+
+    .footer-brandname input.form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .quick-menu,
+    .support,
+    .contact-info,
+    .social-links {
+        margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    /* Go to Top Button */
+    .go-to-top {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 15px;
+    }
+
+    .go-to-top p {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .background-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .background-banner {
-        height: 70vh;
-        min-height: 400px;
-    }
+.menu-toggle {
+    display: none;
 }
