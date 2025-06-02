@@ -17,7 +17,8 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="./images/Logo-White.png" alt="Altesa Logo">
+            <img src="./images/Logo-White.png" class="logo-white" alt="Altesa White Logo">
+            <img src="./images/Logo-Dark.png" class="logo-dark" alt="Altesa Dark Logo">
         </div>
         <nav>
             <ul>
@@ -69,15 +70,11 @@
                     Experience The Dream <span class="styling-vacation">Vacation</span> At Altesa
                 </h1>
                 <p>Escape to Paradise in Our Luxurious Villas & Resorts</p>
-                <div class="search-bar">
-                    <div class="date-input-wrapper">
-                        <input type="date" id="checkin" name="checkin" data-placeholder="Check In" required>
-                    </div>
-                    <div class="date-input-wrapper">
-                        <input type="date" id="checkout" name="checkout" data-placeholder="Check Out" required>
-                    </div>
-                    <input type="number" placeholder="Number of Guests" min="0" max="100" required>
-                    <select class="select-villa" required>
+                <form class="search-bar" action="#" method="get">
+                    <input type="date" id="checkin" name="checkin" data-placeholder="Check In" required>
+                    <input type="date" id="checkout" name="checkout" data-placeholder="Check Out" required>
+                    <input type="number" name="guests" placeholder="Number of Guests" min="0" max="100" required>
+                    <select name="villa" class="select-villa" required>
                         <option value="" disabled selected hidden>Select Villa</option>
                         <option value="whispering-pines">Whispering Pines Villa</option>
                         <option value="mountain-serenity">Mountain Serenity Villa</option>
@@ -86,8 +83,8 @@
                     <a href="#">
                         <button type="submit">Book Now</button>
                     </a>
-                </div>
-            </div>
+                </form>
+
         </section>
 
         <!-- About Section -->
@@ -281,7 +278,7 @@
         <section class="reasons">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 order-2 order-md-1">
                         <div class="reasons-images">
                             <div class="image-container">
                                 <img src="./images/Why choose us - 1.jpg" alt="Villa Image 3" class="top-image">
@@ -289,7 +286,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 order-1 order-md-2">
                         <div class="reasons-content">
                             <h2>Why Choose Us?</h2>
                             <h1>Reasons To Make Luxe Your Place Of <span class="reasons-styling">Tranquility</span></h1>
@@ -570,7 +567,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h2>Blog & News</h2>
-                            <h1>Out latest <span class="blog-styling">Blog</span> & news</h1>
+                            <h1>Our latest <span class="blog-styling">Blog</span> & news</h1>
                         </div>
                         <div class="col-md-6">
                             <div class="view-btn-container">

@@ -151,13 +151,13 @@ header {
     z-index: 1002;
 }
 
-.logo {
-    display: block;
+.logo-dark {
+    display: none;
 }
 
-.logo img {
+.logo-white {
     max-width: 200px;
-    width: 150px;
+    width: auto;
     height: auto;
 }
 
@@ -349,6 +349,8 @@ nav ul li a:hover,
 .search-bar {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 12px;
     background: rgba(71, 71, 71, 0.1);
     backdrop-filter: blur(10px);
@@ -356,6 +358,7 @@ nav ul li a:hover,
     padding: 10px 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 100%;
 }
 
 .search-bar input,
@@ -370,6 +373,8 @@ nav ul li a:hover,
     height: 40px;
     box-sizing: border-box;
     font-family: 'Inter Tight', sans-serif;
+    width: 180px;
+    max-width: 100%;
 }
 
 .search-bar button[type="submit"] {
@@ -384,6 +389,11 @@ nav ul li a:hover,
 .search-bar input[type="number"]::placeholder {
     color: #fff;
     opacity: 1;
+}
+
+.search-bar input[type="date"] {
+    line-height: normal;
+    padding: 10px 12px;
 }
 
 .search-bar input[type="number"],
@@ -974,18 +984,20 @@ nav ul li a:hover,
 }
 
 .top-image {
-    width: 500px;
-    max-height: 780px;
+    width: auto;
+    max-height: 550px;
     display: block;
 }
 
 .bottom-image {
     position: absolute;
-    bottom: -20px;
-    right: -80px;
-    width: 350px;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    max-width: 300px;
     height: auto;
-    border: 20px solid #fff;
+    border-top: 14px solid #fff;
+    border-left: 14px solid #fff;
     background-color: #fff;
 }
 
@@ -1101,7 +1113,6 @@ nav ul li a:hover,
 }
 
 .amenity {
-    background: #fff;
     border: 1px solid #ddd;
     padding: 15px 25px;
     display: flex;
@@ -1118,7 +1129,7 @@ nav ul li a:hover,
 .amenity.active,
 .amenity:hover {
     background: #f3ebe5;
-    border-color: #000;
+    border-color: rgba(111, 111, 111, 0.29);
 }
 
 .icon-circle {
@@ -1796,8 +1807,8 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    body.menu-open header .logo {
-        display: none !important;
+    .menu-open .logo-white {
+        display: block;
     }
 
     .mobile-nav {
@@ -1817,8 +1828,8 @@ footer {
         z-index: 1003 !important;
     }
 
-    .logo img {
-        width: 120px;
+    .logo-white {
+        max-width: 150px;
     }
 
     nav,
@@ -1961,8 +1972,14 @@ footer {
 
     /* Hero Section */
     .hero {
-        height: 80vh;
+        height: auto;
+        min-height: 100vh;
         border-width: 10px;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
     }
 
     .hero-content .heading {
@@ -1982,14 +1999,27 @@ footer {
 
     .search-bar {
         flex-direction: column;
+        align-items: stretch;
         padding: 15px;
+        margin-top: 30px;
+    }
+
+    .search-bar>*+* {
+        margin-top: 3px !important;
     }
 
     .search-bar input,
     .search-bar select,
-    .search-bar .date-input-wrapper,
     .search-bar button {
-        width: 100%;
+        width: 100% !important;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    .search-bar .select-villa {
+        padding: 10px 12px !important;
+        width: 100% !important;
+        appearance: none;
     }
 
     /* About Section */
@@ -2052,26 +2082,37 @@ footer {
 
     /* Reasons Section */
     .reasons {
+        display: flex;
+        flex-direction: column-reverse;
         margin: 30px 20px;
         padding: 40px 0;
-        flex-direction: column;
     }
 
     .reasons-images {
         margin-bottom: 30px;
+        position: relative;
+    }
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
     }
 
     .top-image {
         width: 100%;
-        max-height: 400px;
+        height: auto;
+        position: relative;
+        z-index: 1;
     }
 
     .bottom-image {
-        position: relative;
-        width: 100%;
+        position: absolute;
         bottom: 0;
         right: 0;
-        margin-top: 20px;
+        width: 75%;
+        z-index: 2;
     }
 
     .reasons-content {
@@ -2082,14 +2123,23 @@ footer {
         font-size: 28px;
     }
 
+    .benefit-text {
+        margin-top: 14px;
+    }
+
     /* Amenities Section */
     .amenities {
         margin: 0;
         padding: 40px 20px;
     }
 
+    .section-label  {
+        padding-left: 0;
+        text-align: left;
+    }
+
     .amenities h2 {
-        font-size: 24px;
+        font-size: 35px;
         padding-left: 0;
     }
 
