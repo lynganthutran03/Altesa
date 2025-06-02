@@ -503,15 +503,16 @@ function initMobileMenu() {
     const nav = document.querySelector("nav");
 
     const hamburger = createHamburgerIcon();
-    const mobileNav = createMobileNav(nav);
-
     header.appendChild(hamburger);
+
+    const mobileNav = createMobileNav(nav);
     document.body.appendChild(mobileNav);
 
-    addMenuToggleEvents(hamburger, mobileNav);
-    enableDropdownToggles(mobileNav);
+    setupMobileMenuToggle(hamburger, mobileNav);
+    setupDropdownToggles(mobileNav);
 }
 
+// Create the hamburger icon
 function createHamburgerIcon() {
     const button = document.createElement("button");
     button.className = "menu-toggle";
@@ -522,23 +523,19 @@ function createHamburgerIcon() {
 function createMobileNav(originalNav) {
     const mobileNav = document.createElement("div");
     mobileNav.className = "mobile-nav";
-    mobileNav.style.position = "fixed";
-    mobileNav.style.left = "-100%";
-    mobileNav.style.transition = "left 0.3s ease-in-out";
 
-    const logo = document.querySelector(".logo").cloneNode(true);
-    logo.classList.add("mobile-logo");
-    mobileNav.appendChild(logo);
-
-    const closeBtn = document.createElement("button");
-    closeBtn.className = "close-menu";
-    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-    mobileNav.appendChild(closeBtn);
+    const mobileLogo = document.createElement("div");
+    mobileLogo.className = "mobile-logo";
+    mobileLogo.innerHTML = `
+        <img src="./images/Logo-Dark.png" alt="Altesa Logo">
+        <button class="close-menu"><i class="fas fa-times"></i></button>
+    `;
 
     const navClone = originalNav.querySelector("ul").cloneNode(true);
-    navClone.classList.add("mobile-nav-list");
+    mobileNav.appendChild(mobileLogo);
     mobileNav.appendChild(navClone);
 
+    const closeBtn = mobileLogo.querySelector(".close-menu");
     closeBtn.addEventListener("click", () => {
         mobileNav.classList.remove("open");
         document.body.classList.remove("menu-open");
@@ -547,14 +544,14 @@ function createMobileNav(originalNav) {
     return mobileNav;
 }
 
-function addMenuToggleEvents(hamburger, mobileNav) {
+function setupMobileMenuToggle(hamburger, mobileNav) {
     hamburger.addEventListener("click", () => {
         mobileNav.classList.add("open");
         document.body.classList.add("menu-open");
     });
 }
 
-function enableDropdownToggles(mobileNav) {
+function setupDropdownToggles(mobileNav) {
     const dropdownLinks = mobileNav.querySelectorAll(".dropdown > a");
 
     dropdownLinks.forEach(link => {
