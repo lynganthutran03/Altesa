@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     heroSlider();
     videoPlayer();
     countUpStats();
+    testimonialSlider();
     new ScrollDarken();
     handleSubscribe();
     const { modal, modalImg, closeBtn } = createModal();
@@ -104,6 +105,47 @@ function heroSlider() {
         sliderContainer.addEventListener('mouseleave', startSlider);
     }
 
+    return { start: startSlider, stop: stopSlider, next: nextSlide };
+}
+
+// Testimonial Slider
+function testimonialSlider() {
+    const sliderTrack = document.querySelector('.slider-track');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const slideWidth = 330;
+    const slideCount = dots.length;
+    const slideDuration = 5000;
+    let slideInterval;
+
+    function goToSlide(index) {
+        currentIndex = index;
+        sliderTrack.style.transform = `translateX(-${slideWidth * index}px)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        goToSlide((currentIndex + 1) % slideCount);
+    }
+
+    function startSlider() {
+        slideInterval = setInterval(nextSlide, slideDuration);
+    }
+
+    function stopSlider() {
+        clearInterval(slideInterval);
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            stopSlider();
+            goToSlide(index);
+            startSlider();
+        });
+    });
+
+    startSlider();
     return { start: startSlider, stop: stopSlider, next: nextSlide };
 }
 

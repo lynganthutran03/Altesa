@@ -611,8 +611,8 @@ nav ul li a:hover,
 }
 
 .section-subtitle {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
     letter-spacing: 1px;
 }
 
@@ -792,9 +792,10 @@ nav ul li a:hover,
 
 .villas h2 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     color: #000000;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .villas h1 {
@@ -807,6 +808,7 @@ nav ul li a:hover,
     color: #000000;
     font-family: 'Cormorant Garamond', sans-serif;
     font-style: italic;
+    font-size: 39px;
 }
 
 .villa-cards {
@@ -976,7 +978,7 @@ nav ul li a:hover,
 
 .background-content h2 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 47px;
+    font-size: 36px;
     line-height: 1.3;
     margin: 0;
     font-weight: 500;
@@ -989,7 +991,7 @@ nav ul li a:hover,
 .background-styling {
     font-family: 'Cormorant Garamond', sans-serif;
     color: #f1cda9;
-    font-size: 60px;
+    font-size: 41px;
     font-style: italic;
     font-weight: 400;
 }
@@ -1056,7 +1058,7 @@ nav ul li a:hover,
 
 .top-image {
     width: auto;
-    max-height: 550px;
+    max-height: 700px;
     display: block;
 }
 
@@ -1065,7 +1067,7 @@ nav ul li a:hover,
     bottom: 0;
     right: 0;
     width: auto;
-    max-width: 300px;
+    max-width: 350px;
     height: auto;
     border-top: 14px solid #fff;
     border-left: 14px solid #fff;
@@ -1081,11 +1083,12 @@ nav ul li a:hover,
     font-size: 18px;
     font-weight: 500;
     color: #2b2b2b;
+    letter-spacing: 1px;
 }
 
 .reasons-content h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 500;
     color: rgb(14, 24, 36);
     text-align: left;
@@ -1095,7 +1098,7 @@ nav ul li a:hover,
 .reasons-styling {
     font-family: 'Cormorant Infant', sans-serif;
     font-style: italic;
-    font-size: 48px;
+    font-size: 39px;
     font-size: 500;
     color: rgb(14, 24, 36);
 }
@@ -1131,7 +1134,7 @@ nav ul li a:hover,
     font-weight: 900;
     font-size: 16px;
     content: '\f111';
-    background: #f3ebe5;
+    background: #eeded1;
     color: #000000;
     width: 50px;
     height: 50px;
@@ -1157,34 +1160,34 @@ nav ul li a:hover,
 .amenities {
     margin: 0 30px;
     padding: 100px 50px;
-    background: #fef3eb;
+    background: #eeded1;
 }
 
 .section-label {
     padding-left: 50px;
-    font-size: 20px;
+    font-size: 18px;
     color: #2b2b2b;
     margin-bottom: 10px;
     font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .amenities h2 {
     padding-left: 50px;
-    font-size: 42px;
+    font-size: 36px;
     font-weight: 500;
     color: #2b2b2b;
     margin-bottom: 40px;
-    line-height: 1.4;
 }
 
 .amenities-styling {
     font-family: 'Cormorant Infant', serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 41px;
 }
 
 .amenity {
-    border: 1px solid #ddd;
+    border: 1px solid #c7c6c6;
     padding: 15px 25px;
     display: flex;
     align-items: flex-start;
@@ -1194,7 +1197,7 @@ nav ul li a:hover,
     max-height: 240px;
     max-width: 350px;
     transition: all 0.3s ease;
-    margin: 15px 20px 0;
+    margin: 15px 5px 10px 0;
 }
 
 .amenity.active,
@@ -1204,7 +1207,7 @@ nav ul li a:hover,
 }
 
 .icon-circle {
-    background: #f3ebe5;
+    background: #ccc6c1;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -1251,9 +1254,10 @@ nav ul li a:hover,
 
 .gallery-content h2 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     text-transform: capitalize;
+    letter-spacing: 1px;
 }
 
 .gallery-content h1 {
@@ -1274,7 +1278,7 @@ nav ul li a:hover,
     position: relative;
     overflow: hidden;
     width: calc(100% - 26px);
-    margin: 13px;
+    margin: 10px 5px 10px 0;
 }
 
 .img-container img {
@@ -1312,8 +1316,8 @@ nav ul li a:hover,
 .view-btn {
     background: #dbaa78;
     border: none;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     color: white;
     cursor: pointer;
@@ -1343,8 +1347,8 @@ nav ul li a:hover,
 .testimonials {
     background-color: #0e1824;
     padding: 120px 40px;
-    text-align: center;
     border: 20px solid white;
+    text-align: center;
 }
 
 .testimonials-header h2 {
@@ -1353,11 +1357,12 @@ nav ul li a:hover,
     font-weight: 500;
     color: #fff;
     margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 .testimonials-header h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 500;
     color: #fff;
     text-transform: capitalize;
@@ -1367,29 +1372,39 @@ nav ul li a:hover,
 .testimonials-styling {
     font-family: 'Cormorant Infant', serif;
     font-style: italic;
-    font-size: 52px;
+    font-size: 41px;
     font-weight: 500;
     color: #ffc89a;
 }
 
-/* Carousel */
-.carousel-item {
+.testimonials-slider {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.slider-track {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
     gap: 20px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
 }
 
 .testimonial-card {
     background: #192431;
     border-radius: 2px;
     padding: 20px;
+    width: calc(25% - 15px);
+    min-width: 280px;
+    flex-shrink: 0;
     text-align: left;
-    width: 100%;
 }
 
 .testimonial-info {
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -1398,17 +1413,65 @@ nav ul li a:hover,
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-fit: cover;
     margin-right: 15px;
 }
 
-.testimonial-text {
-    color: #ccc;
-    font-size: 16px;
+.testimonial-info .info-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #f1cda9;
+.testimonial-info h4 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.testimonial-info p {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    color: #ffc89a;
+    margin: 0;
+}
+
+.testimonial-text p {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Navigation Arrows */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    background: #ffc89a;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: #d6d6d6;
+}
+
+.nav-btn i {
+    font-size: 18px;
 }
 
 /* Blog Section */
@@ -1441,6 +1504,7 @@ nav ul li a:hover,
     font-family: 'Inter Tight', sans-serif;
     font-size: 18px;
     font-weight: 500;
+    letter-spacing: 1px;
     color: #000;
     margin: 0;
     text-transform: capitalize;
@@ -1448,7 +1512,7 @@ nav ul li a:hover,
 
 .blog-header h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 500;
     color: #000;
     text-transform: capitalize;
@@ -1458,7 +1522,7 @@ nav ul li a:hover,
 .blog-styling {
     font-family: 'Cormorant Infant', serif;
     font-style: italic;
-    font-size: 58px;
+    font-size: 41px;
     font-weight: 500;
     color: #000;
 }
@@ -1829,8 +1893,6 @@ footer {
     .testimonials {
         padding-left: 10px !important;
         padding-right: 10px !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
     }
 
     .row {
@@ -2045,7 +2107,7 @@ footer {
         margin-top: 30px;
     }
 
-    .search-bar > * + * {
+    .search-bar>*+* {
         margin-top: 10px;
     }
 
@@ -2278,6 +2340,10 @@ footer {
         font-size: 28px;
     }
 
+    .testimonials-styling {
+        font-size: 32px;
+    }
+
     .testimonial-card {
         min-width: 100%;
     }
@@ -2290,6 +2356,15 @@ footer {
 
     .blog-header h1 {
         font-size: 28px;
+    }
+
+    .blog-styling {
+        font-size: 32px;
+    }
+
+    .view-btn-container {
+        margin-top: 10px;
+        text-align: left;
     }
 
     .blog-post {
