@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     heroSlider();
-    testimonialSlider();
     videoPlayer();
     countUpStats();
     new ScrollDarken();
@@ -9,7 +8,51 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners(modal, modalImg, closeBtn);
     initFAQAccordion();
     initMobileMenu();
+    setupSelectIconToggle('.custom-select-wrapper');
 });
+
+// Select Icon Rotate
+function setupSelectIconToggle(wrapperSelector) {
+    const wrapper = document.querySelector(wrapperSelector);
+    if (!wrapper) return;
+
+    const trigger = wrapper.querySelector('.custom-select-trigger');
+    const options = wrapper.querySelector('.custom-options');
+    const icon = trigger.querySelector('i');
+    const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+    const span = trigger.querySelector('span');
+
+    let isOpen = false;
+
+    trigger.addEventListener('click', () => {
+        isOpen = !isOpen;
+        options.classList.toggle('open');
+
+        icon.classList.toggle('fa-sort-down', !isOpen);
+        icon.classList.toggle('fa-sort-up', isOpen);
+    });
+
+    wrapper.querySelectorAll('.custom-option').forEach(option => {
+        option.addEventListener('click', () => {
+            span.textContent = option.textContent;
+            hiddenInput.value = option.dataset.value;
+            options.classList.remove('open');
+            isOpen = false;
+
+            icon.classList.add('fa-sort-down');
+            icon.classList.remove('fa-sort-up');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!wrapper.contains(e.target)) {
+            options.classList.remove('open');
+            isOpen = false;
+            icon.classList.add('fa-sort-down');
+            icon.classList.remove('fa-sort-up');
+        }
+    })
+}
 
 // Hero Slider with Video Support
 function heroSlider() {
@@ -61,47 +104,6 @@ function heroSlider() {
         sliderContainer.addEventListener('mouseleave', startSlider);
     }
 
-    return { start: startSlider, stop: stopSlider, next: nextSlide };
-}
-
-// Testimonial Slider
-function testimonialSlider() {
-    const sliderTrack = document.querySelector('.slider-track');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-    const slideWidth = 330;
-    const slideCount = dots.length;
-    const slideDuration = 5000;
-    let slideInterval;
-
-    function goToSlide(index) {
-        currentIndex = index;
-        sliderTrack.style.transform = `translateX(-${slideWidth * index}px)`;
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
-    }
-
-    function nextSlide() {
-        goToSlide((currentIndex + 1) % slideCount);
-    }
-
-    function startSlider() {
-        slideInterval = setInterval(nextSlide, slideDuration);
-    }
-
-    function stopSlider() {
-        clearInterval(slideInterval);
-    }
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            stopSlider();
-            goToSlide(index);
-            startSlider();
-        });
-    });
-
-    startSlider();
     return { start: startSlider, stop: stopSlider, next: nextSlide };
 }
 
