@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    background: #fff;
 }
 
 /* Header */
@@ -28,9 +29,7 @@ body {
     width: 100%;
     height: 100%;
     background: #fff;
-    /* White background as in original */
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
     z-index: 1001;
     padding: 30px 20px;
     transition: left 0.3s ease-in-out;
@@ -148,7 +147,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1002;
+    z-index: 1003;
 }
 
 .logo-dark {
@@ -1001,7 +1000,7 @@ nav ul li a:hover,
     color: #000000;
     border: none;
     padding: 15px 40px;
-    font-size: 17px;
+    font-size: 15px;
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -1036,8 +1035,8 @@ nav ul li a:hover,
 .reasons {
     display: flex;
     align-items: stretch;
-    margin: 50px 100px;
-    padding: 100px 0;
+    margin: 50px 100px 25px;
+    padding: 50px 0;
     gap: 40px;
 }
 
@@ -1058,16 +1057,16 @@ nav ul li a:hover,
 
 .top-image {
     width: auto;
-    max-height: 700px;
+    max-height: 600px;
     display: block;
 }
 
 .bottom-image {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -50px;
     width: auto;
-    max-width: 350px;
+    max-width: 300px;
     height: auto;
     border-top: 14px solid #fff;
     border-left: 14px solid #fff;
@@ -1075,7 +1074,7 @@ nav ul li a:hover,
 }
 
 .reasons-content {
-    padding: 0 80px;
+    padding: 0 20px;
 }
 
 .reasons-content h2 {
@@ -1098,7 +1097,7 @@ nav ul li a:hover,
 .reasons-styling {
     font-family: 'Cormorant Infant', sans-serif;
     font-style: italic;
-    font-size: 39px;
+    font-size: 41px;
     font-size: 500;
     color: rgb(14, 24, 36);
 }
@@ -1122,10 +1121,10 @@ nav ul li a:hover,
 
 .benefit-title {
     font-family: 'Cormorant Infant', sans-serif;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 600;
     color: #2b2b2b;
-    margin: 0 0 5px;
+    margin: 15px 0 0;
 }
 
 .icon::before {
@@ -1158,9 +1157,9 @@ nav ul li a:hover,
 
 /* Amenities Section */
 .amenities {
-    margin: 0 30px;
     padding: 100px 50px;
     background: #eeded1;
+    border: 20px solid white;
 }
 
 .section-label {
@@ -1243,9 +1242,14 @@ nav ul li a:hover,
 
 /* Gallery Section */
 .gallery {
-    padding: 80px 120px;
+    padding: 80px 100px;
     margin-bottom: 40px;
     text-align: center;
+}
+
+.gallery .col-md-6,
+.gallery .col-md-3 {
+    padding: 0;
 }
 
 .gallery-content {
@@ -1262,7 +1266,7 @@ nav ul li a:hover,
 
 .gallery-content h1 {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 45px;
+    font-size: 36px;
     font-weight: 500;
     text-transform: capitalize;
 }
@@ -1270,7 +1274,7 @@ nav ul li a:hover,
 .gallery-styling {
     font-family: 'Cormorant Infant', serif;
     font-style: italic;
-    font-size: 50px;
+    font-size: 41px;
     font-weight: 500;
 }
 
@@ -1326,7 +1330,7 @@ nav ul li a:hover,
     justify-content: center;
     align-items: center;
     padding: 0;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -1537,7 +1541,7 @@ nav ul li a:hover,
     width: 100%;
     height: 500px;
     background: #fff;
-    padding: 0 5px;
+    padding: 0;
 }
 
 .blog-post::after {
@@ -1601,7 +1605,7 @@ nav ul li a:hover,
     padding: 0;
 }
 
-.view-btn {
+.view-btn-blog {
     width: 120px;
     height: 50px;
     margin: 0;
@@ -1626,41 +1630,10 @@ nav ul li a:hover,
     background: #0e1824;
 }
 
-/* Go to Top Button */
-.go-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #d4a373;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s;
-}
-
-.go-to-top span {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.go-to-top p {
-    font-size: 14px;
-    font-family: 'Inter Tight', sans-serif;
-}
-
-.go-to-top:hover {
-    opacity: 0.9;
-}
-
 /* Footer */
 footer {
     background: #0e1824;
-    color: #fff;
+    color: #ffffff;
     padding: 60px 0 30px;
     font-family: 'Inter Tight', sans-serif;
     position: relative;
@@ -1700,23 +1673,25 @@ footer {
 .footer-brandname p {
     color: #cbd5e1;
     font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .footer-brandname input.form-control {
+    background-color: #192431;
     border-radius: 25px;
     border: none;
-    padding: 10px 15px;
-    font-size: 14px;
+    padding: 12px;
     width: 150px;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
-.footer-brandname input.email::placeholder {
-    color: #94a3b8;
+.footer-brandname input.form-control::placeholder {
+    color: #f2f2f2;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
 .footer-brandname button.btn-warning {
@@ -1726,7 +1701,8 @@ footer {
     color: #000;
     font-weight: 500;
     font-size: 14px;
-    padding: 10px 20px;
+    padding: 12px;
+    max-width: 150px;
     display: inline-block;
     vertical-align: middle;
     transition: background-color 0.3s;
@@ -1893,6 +1869,7 @@ footer {
     .testimonials {
         padding-left: 10px !important;
         padding-right: 10px !important;
+        box-sizing: border-box;
     }
 
     .row {
@@ -2077,7 +2054,8 @@ footer {
     .hero {
         height: auto;
         min-height: 100vh;
-        border-width: 10px;
+        border-width: 15px;
+        background-color: #fff;
     }
 
     .hero-content {
@@ -2150,6 +2128,7 @@ footer {
     /* About Section */
     .about-section {
         padding: 40px 20px;
+        border-width: 15px;
     }
 
     .section-subtitle {
@@ -2179,7 +2158,7 @@ footer {
 
     /* Villas Section */
     .villas {
-        padding: 40px 20px;
+        padding: 40px 10px;
     }
 
     .villas h2 {
@@ -2194,6 +2173,10 @@ footer {
         font-size: 32px;
     }
 
+    .villa-cards {
+        margin: 0 10px;
+    }
+
     .villa-card {
         width: 100%;
         margin-bottom: 30px;
@@ -2202,7 +2185,9 @@ footer {
     /* Background Banner */
     .background-banner {
         height: 50vh;
-        border-width: 10px;
+        border-width: 15px;
+        box-sizing: border-box;
+        background-clip: padding-box;
     }
 
     .background-content h2 {
@@ -2226,7 +2211,6 @@ footer {
         display: flex;
         flex-direction: column-reverse;
         margin: 30px 20px;
-        padding: 40px 0;
     }
 
     .reasons-images {
@@ -2272,7 +2256,7 @@ footer {
         font-size: 32px;
     }
 
-    .benefit-text {
+    .benefit-title {
         margin-top: 14px;
     }
 
@@ -2280,6 +2264,9 @@ footer {
     .amenities {
         margin: 0;
         padding: 40px 20px;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border-width: 15px;
     }
 
     .section-label {
@@ -2312,6 +2299,7 @@ footer {
 
     .gallery-content h1 {
         font-size: 28px;
+        margin-bottom: 0;
     }
 
     .gallery-styling {
@@ -2320,7 +2308,7 @@ footer {
 
     .img-container {
         width: 100%;
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     .img-container img {
@@ -2333,7 +2321,9 @@ footer {
     /* Testimonials */
     .testimonials {
         padding: 40px 20px;
-        border-width: 10px;
+        border-width: 15px;
+        box-sizing: border-box;
+        background-clip: padding-box;
     }
 
     .testimonials-header h1 {
@@ -2350,8 +2340,7 @@ footer {
 
     /* Blog Section */
     .blog {
-        padding: 40px 20px;
-        margin: 50px auto;
+        margin: 50px 0;
     }
 
     .blog-header h1 {
@@ -2385,6 +2374,15 @@ footer {
 
     .footer-brandname {
         max-width: 100%;
+    }
+
+    .footer-brandname img {
+        width: auto;
+        height: 50px;
+    }
+
+    .footer-brandname p {
+        font-size: 16px;
     }
 
     .footer-brandname input.form-control {

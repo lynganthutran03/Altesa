@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQAccordion();
     initMobileMenu();
     setupSelectIconToggle('.custom-select-wrapper');
+    initGoToTopButton();
 });
 
 // Select Icon Rotate
@@ -603,6 +604,47 @@ function setupDropdownToggles(mobileNav) {
             e.preventDefault();
             this.parentElement.classList.toggle("open");
         });
+    });
+}
+
+// Go to top button
+function initGoToTopButton() {
+    const btn = document.createElement('button');
+    btn.id = 'goToTopBtn';
+    btn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    Object.assign(btn.style, {
+        position: 'fixed',
+        bottom: '30px',
+        right: '30px',
+        zIndex: '1000',
+        display: 'none',
+        padding: '12px 16px',
+        width: '50px',
+        height: '50px',
+        backgroundColor: '#f5c7a1',
+        color: '#3d3d3d',
+        border: 'none',
+        borderRadius: '50%',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+        cursor: 'pointer',
+        transition: 'opacity 0.3s',
+    });
+
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        const showAfter = header.offsetHeight + 50;
+
+        if (window.scrollY > showAfter) {
+            btn.style.display = 'block';
+        } else {
+            btn.style.display = 'none';
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
