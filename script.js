@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     setupSelectIconToggle('.custom-select-wrapper');
     initGoToTopButton();
+    renderVillas(villas);
+    renderAmenities(amenities);
+    renderBlogPosts(blogPosts);
 });
 
 // Select Icon Rotate
@@ -587,6 +590,283 @@ function initGoToTopButton() {
 
     btn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Render Villas
+const villas = [
+    {
+        location: "Denpasar",
+        image: "./images/Our Villas - 1.jpg",
+        name: "Whispering Pines Villa",
+        beds: 4,
+        baths: 3,
+        guests: 12,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar",
+        price: "$150.00",
+        rating: 4.5 // use 5 for full stars, 4.5 for half, etc.
+    },
+    {
+        location: "Bandung",
+        image: "./images/Our Villas - 2.jpg",
+        name: "Mountain Serenity Villa",
+        beds: 6,
+        baths: 4,
+        guests: 14,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar",
+        price: "$165.00",
+        rating: 4.5
+    },
+    {
+        location: "Tangerang",
+        image: "./images/Our Villas - 3.jpg",
+        name: "Modern Bliss Villa",
+        beds: 7,
+        baths: 5,
+        guests: 15,
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar",
+        price: "$170.00",
+        rating: 5
+    }
+];
+
+function renderVillas(villas) {
+    const container = document.querySelector("#render-villa-card");
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    villas.forEach(villa => {
+        const col = document.createElement("div");
+        col.className = "col-md-4";
+
+        const card = document.createElement("div");
+        card.className = "villa-card";
+
+        const locationDiv = document.createElement("div");
+        locationDiv.className = "card-location";
+        locationDiv.textContent = villa.location;
+        card.appendChild(locationDiv);
+
+        const img = document.createElement("img");
+        img.src = villa.image;
+        img.alt = villa.name;
+        card.appendChild(img);
+
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        const ratingDiv = document.createElement("div");
+        ratingDiv.className = "card-rating";
+
+        const fullStars = Math.floor(villa.rating);
+        const hasHalfStar = villa.rating % 1 !== 0;
+
+        for (let i = 0; i < fullStars; i++) {
+            const star = document.createElement("i");
+            star.className = "fa-solid fa-star";
+            ratingDiv.appendChild(star);
+        }
+
+        if (hasHalfStar) {
+            const halfStar = document.createElement("i");
+            halfStar.className = "fa-solid fa-star-half-stroke";
+            ratingDiv.appendChild(halfStar);
+        }
+
+        content.appendChild(ratingDiv);
+
+        const name = document.createElement("h3");
+        name.textContent = villa.name;
+        content.appendChild(name);
+
+        const features = document.createElement("ul");
+        features.className = "card-features";
+
+        const bedLi = document.createElement("li");
+        bedLi.innerHTML = `<i class="fa-solid fa-bed"></i> ${villa.beds} Beds`;
+        features.appendChild(bedLi);
+
+        const bathLi = document.createElement("li");
+        bathLi.innerHTML = `<i class="fa-solid fa-bath"></i> ${villa.baths} Baths`;
+        features.appendChild(bathLi);
+
+        const guestLi = document.createElement("li");
+        guestLi.innerHTML = `<i class="fa-solid fa-person"></i> ${villa.guests} Guests`;
+        features.appendChild(guestLi);
+
+        content.appendChild(features);
+
+        const description = document.createElement("p");
+        description.className = "card-description";
+        description.textContent = villa.description;
+        content.appendChild(description);
+
+        const footer = document.createElement("div");
+        footer.className = "card-footer";
+
+        const priceP = document.createElement("p");
+        priceP.innerHTML = `<span class="card-price">${villa.price}</span>/Night`;
+        footer.appendChild(priceP);
+
+        const link = document.createElement("a");
+        link.href = "#";
+
+        const button = document.createElement("button");
+        button.className = "card-button";
+        button.textContent = "More Details";
+        link.appendChild(button);
+
+        footer.appendChild(link);
+        content.appendChild(footer);
+
+        card.appendChild(content);
+        col.appendChild(card);
+        container.appendChild(col);
+    });
+}
+
+// Render Amenities
+const amenities = [
+    {
+        icon: "fa-solid fa-water-ladder",
+        text: "Private Pools",
+        active: true
+    },
+    {
+        icon: "fa-solid fa-spa",
+        text: "Spa Services"
+    },
+    {
+        icon: "fa-solid fa-golf-ball-tee",
+        text: "Golf Courses"
+    },
+    {
+        icon: "fa-solid fa-dumpster",
+        text: "Housekeeping"
+    },
+    {
+        icon: "fa-solid fa-martini-glass-citrus",
+        text: "Restaurants & Mini Bar"
+    },
+    {
+        icon: "fa-solid fa-dumbbell",
+        text: "Quality Gym"
+    }
+];
+
+function renderAmenities(amenities) {
+    const container = document.querySelector("#render-amenities");
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    // First col-md-6 (label + title)
+    const headingCol = document.createElement("div");
+    headingCol.className = "col-md-6";
+
+    const label = document.createElement("p");
+    label.className = "section-label";
+    label.textContent = "Amenities";
+
+    const title = document.createElement("h2");
+    title.innerHTML = 'We Offer Luxurious <span class="amenities-styling">Amenities</span> Just For You!';
+
+    headingCol.appendChild(label);
+    headingCol.appendChild(title);
+    container.appendChild(headingCol);
+
+    // Render each amenity in col-md-3
+    amenities.forEach(amenity => {
+        const col = document.createElement("div");
+        col.className = "col-md-3";
+
+        const amenityDiv = document.createElement("div");
+        amenityDiv.className = "amenity";
+        if (amenity.active) {
+            amenityDiv.classList.add("active");
+        }
+
+        const iconCircle = document.createElement("div");
+        iconCircle.className = "icon-circle";
+
+        const icon = document.createElement("i");
+        icon.className = amenity.icon;
+
+        iconCircle.appendChild(icon);
+        amenityDiv.appendChild(iconCircle);
+
+        const text = document.createElement("p");
+        text.textContent = amenity.text;
+        amenityDiv.appendChild(text);
+
+        col.appendChild(amenityDiv);
+        container.appendChild(col);
+    });
+}
+
+// Render Blog Posts
+const blogPosts = [
+    {
+        image: "./images/Blog 1.jpg",
+        alt: "Blog Post 1",
+        title: "10 Ways Villas Can Make Your Holiday Enjoyable",
+        date: "Dec 20, 2024"
+    },
+    {
+        image: "./images/Blog 2.jpg",
+        alt: "Blog Post 2",
+        title: "Top 8 Destinations & Villas You Must Visit in 2024",
+        date: "Jun 10, 2024"
+    },
+    {
+        image: "./images/Blog 3.jpg",
+        alt: "Blog Post 3",
+        title: "Plan Your Days & Weeks Allocate Time For Family",
+        date: "Mar 15, 2024"
+    }
+];
+
+function renderBlogPosts(blogPosts) {
+    const container = document.querySelector("#render-blog-posts");
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    blogPosts.forEach(post => {
+        const col = document.createElement("div");
+        col.className = "col-md-4";
+
+        const anchor = document.createElement("a");
+        anchor.href = "#";
+
+        const blogPost = document.createElement("div");
+        blogPost.className = "blog-post";
+
+        const img = document.createElement("img");
+        img.src = post.image;
+        img.alt = post.alt;
+
+        const content = document.createElement("div");
+        content.className = "post-content";
+
+        const title = document.createElement("h3");
+        title.textContent = post.title;
+
+        const date = document.createElement("p");
+        const clockIcon = document.createElement("i");
+        clockIcon.className = "fa-solid fa-clock clock-icon";
+
+        date.appendChild(clockIcon);
+        date.append(` ${post.date}`);
+
+        content.appendChild(title);
+        content.appendChild(date);
+        blogPost.appendChild(img);
+        blogPost.appendChild(content);
+        anchor.appendChild(blogPost);
+        col.appendChild(anchor);
+        container.appendChild(col);
     });
 }
 
