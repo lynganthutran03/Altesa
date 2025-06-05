@@ -1632,14 +1632,14 @@ nav ul li a:hover,
 footer {
     background: #0e1824;
     color: #ffffff;
-    padding: 60px 0 30px;
+    padding: 40px 0 20px;
     font-family: 'Inter Tight', sans-serif;
     position: relative;
 }
 
 .footer-content {
     max-width: 1400px;
-    margin: 100px auto;
+    margin: 80px auto 40px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
@@ -1659,7 +1659,8 @@ footer {
 
 /* === Left Column (Brandname & Quick Menu) === */
 .footer-brandname {
-    max-width: 300px;
+    max-width: 350px;
+    margin-left: 20px;
 }
 
 .footer-brandname img {
