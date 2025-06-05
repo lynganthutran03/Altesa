@@ -65,10 +65,6 @@ body {
     border: 1px solid #eee;
 }
 
-.mobile-nav .mobile-nav-list li {
-    margin-bottom: 10px;
-}
-
 .mobile-nav .mobile-nav-list li a {
     text-decoration: none;
     color: #333;
@@ -155,9 +151,10 @@ header {
 }
 
 .logo-white {
-    max-width: 200px;
+    max-width: 180px;
     width: auto;
     height: auto;
+    margin-bottom: 10px;
 }
 
 nav ul {
@@ -238,6 +235,7 @@ nav ul li a:hover,
 }
 
 .reserve-btn {
+    margin-bottom: 16px;
     padding: 10px 20px;
     background: #f5c7a1;
     color: #000000;
@@ -295,7 +293,7 @@ nav ul li a:hover,
     width: 100%;
     background-size: cover;
     background-position: center;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 2s ease-in-out;
     opacity: 0;
     z-index: 1;
 }
@@ -1860,6 +1858,7 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+
     .container,
     section,
     .gallery,
@@ -1998,14 +1997,15 @@ footer {
         font-weight: 600;
         background: none;
         border-radius: 0;
-        padding: 0;
+        padding: 12px 0;
     }
 
-    .mobile-nav .dropdown:not(.open)>a.active {
-        color: #222;
-        font-weight: 500;
-        background: none;
-        padding: 12px 0;
+    .mobile-nav .mobile-nav-list li {
+        margin-bottom: 10px;
+    }
+
+    .mobile-nav .mobile-nav-list>li {
+        padding: 25px 0;
     }
 
     .mobile-nav .dropdown-menu {
@@ -2038,6 +2038,12 @@ footer {
         font-size: 16px;
         border-radius: 0;
         color: #333;
+    }
+
+    .mobile-nav .dropdown>a {
+        color: #222;
+        font-weight: 500;
+        transition: color 0.3s, font-weight 0.3s;
     }
 
     .mobile-nav .dropdown>a:hover,
@@ -2210,7 +2216,7 @@ footer {
     .reasons {
         display: flex;
         flex-direction: column-reverse;
-        margin: 30px 20px;
+        margin: 30px 0;
     }
 
     .reasons-images {
@@ -2222,7 +2228,7 @@ footer {
         position: relative;
         width: 100%;
         max-width: 500px;
-        margin: auto;
+        margin: 10px 0;
     }
 
     .top-image {
@@ -2236,8 +2242,9 @@ footer {
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 75%;
+        width: 70%;
         z-index: 2;
+        border-width: 13px;
     }
 
     .reasons-content {
@@ -2256,8 +2263,12 @@ footer {
         font-size: 32px;
     }
 
+    .benefits-list {
+        margin: 0 10px;
+    }
+
     .benefit-title {
-        margin-top: 14px;
+        margin-top: 17px;
     }
 
     /* Amenities Section */

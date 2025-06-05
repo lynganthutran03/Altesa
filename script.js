@@ -60,8 +60,10 @@ function setupSelectIconToggle(wrapperSelector) {
 function heroSlider() {
     const slides = document.querySelectorAll('.hero-slider .slide');
     let currentSlide = 0;
-    let slideInterval;
-    const slideDuration = 4000;
+    let timeout;
+
+    const displayTime = 3000;
+    const transitionTime = 2000;
 
     function showSlide(index) {
         const currentVideo = slides[currentSlide].querySelector('video, iframe');
@@ -74,6 +76,7 @@ function heroSlider() {
 
         slides.forEach((slide, i) => {
             slide.classList.toggle('active', i === index);
+            slide.style.transition = `opacity ${transitionTime}ms ease-in-out`;
             slide.style.opacity = i === index ? '1' : '0';
             slide.style.zIndex = i === index ? '2' : '1';
         });
@@ -88,18 +91,20 @@ function heroSlider() {
 
     function nextSlide() {
         showSlide((currentSlide + 1) % slides.length);
+        timeout = setTimeout(nextSlide, displayTime + transitionTime);
     }
 
     function startSlider() {
         showSlide(0);
-        slideInterval = setInterval(nextSlide, slideDuration);
+        timeout = setTimeout(nextSlide, displayTime + transitionTime);
     }
 
     function stopSlider() {
-        clearInterval(slideInterval);
+        clearInterval(timeout);
     }
 
     startSlider();
+
     const sliderContainer = document.querySelector('.hero-slider');
     if (sliderContainer) {
         sliderContainer.addEventListener('mouseenter', stopSlider);
@@ -602,7 +607,15 @@ function setupDropdownToggles(mobileNav) {
     dropdownLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();
-            this.parentElement.classList.toggle("open");
+            const currentDropdown = this.parentElement;
+
+            mobileNav.querySelectorAll(".dropdown.open").forEach(dropdown => {
+                if (dropdown !== currentDropdown) {
+                    dropdown.classList.remove("open");
+                }
+            });
+
+            currentDropdown.classList.toggle("open");
         });
     });
 }
