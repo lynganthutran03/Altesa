@@ -1845,17 +1845,27 @@ footer {
 
 /* === Footer Bottom === */
 .footer-bottom {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 13px;
     color: #94a3b8;
-    padding-top: 20px;
+    padding: 20px 40px;
     border-top: 1px solid #1f2937;
     margin-top: 20px;
 }
 
+.footer-bottom .left,
+.footer-bottom .right {
+    flex: 1;
+}
+
+.footer-bottom .right {
+    text-align: right;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-
     .container,
     section,
     .gallery,
@@ -2071,6 +2081,7 @@ footer {
     .hero-content {
         display: flex;
         flex-direction: column;
+        padding-top: 150px;
     }
 
     .hero-content .heading {
@@ -2417,8 +2428,17 @@ footer {
     }
 
     .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
         padding-top: 20px;
         margin-top: 20px;
+    }
+
+    .footer-bottom .left,
+    .footer-bottom .right {
+        text-align: center;
+        flex: unset;
     }
 
     /* Go to Top Button */
