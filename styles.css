@@ -224,6 +224,7 @@ nav ul li a:hover,
 
 .dropdown:hover .dropdown-menu {
     display: block;
+    margin-top: 15px;
 }
 
 .reserve-btn {
@@ -1373,6 +1374,7 @@ nav ul li a:hover,
 
 .testimonials-slider {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -1381,19 +1383,21 @@ nav ul li a:hover,
 
 .slider-track {
     display: flex;
-    gap: 20px;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
 }
 
 .testimonial-card {
+    flex: 0 0 auto;
+    margin: 0 9px;
     background: #192431;
     border-radius: 2px;
     padding: 20px;
-    width: calc(25% - 15px);
+    width: calc(100% / 4 - 20px);
     min-width: 280px;
     flex-shrink: 0;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .testimonial-info {
@@ -1615,7 +1619,7 @@ nav ul li a:hover,
     text-decoration: none;
 }
 
-.view-btn:hover {
+.view-btn-blog:hover {
     color: #fff;
     background: #0e1824;
 }
@@ -2343,6 +2347,10 @@ footer {
 
     .testimonials-styling {
         font-size: 32px;
+    }
+
+    .slider-track {
+        margin: 0 1px 0 1px;
     }
 
     .testimonial-card {
